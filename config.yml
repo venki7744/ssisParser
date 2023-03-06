@@ -1,0 +1,11 @@
+parserConfig:
+  ssisFolder: C:\Users\Venki\OneDrive\python\ssisParser\ssisSample
+
+analysisModels:
+  - name: connections
+    parent: '[DTS:Executable]'
+    columns:
+      - name: packageName 
+        path: '[@DTS:ObjectName]'
+      - name: DTSID
+        path: '[@DTS:DTSID]'

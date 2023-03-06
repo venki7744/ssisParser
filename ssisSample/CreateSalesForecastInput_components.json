@@ -1,0 +1,957 @@
+[
+   {
+      "@id": "1",
+      "@name": "OLE DB Source",
+      "@componentClassID": "{2C0A8BE5-1EDC-4353-A0EF-B778599C65A0}",
+      "@description": "OLE DB Source",
+      "@localeId": "-1",
+      "@usesDispositions": "true",
+      "@validateExternalMetadata": "True",
+      "@version": "7",
+      "@pipelineVersion": "0",
+      "@contactInfo": "OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7",
+      "properties": {
+         "property": [
+            {
+               "@id": "2",
+               "@name": "CommandTimeout",
+               "@dataType": "System.Int32",
+               "@state": "default",
+               "@isArray": "false",
+               "@description": "The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.",
+               "@typeConverter": "",
+               "@UITypeEditor": "",
+               "@containsID": "false",
+               "@expressionType": "None",
+               "#text": "0"
+            },
+            {
+               "@id": "3",
+               "@name": "OpenRowset",
+               "@dataType": "System.String",
+               "@state": "default",
+               "@isArray": "false",
+               "@description": "Specifies the name of the database object used to open a rowset.",
+               "@typeConverter": "",
+               "@UITypeEditor": "",
+               "@containsID": "false",
+               "@expressionType": "None"
+            },
+            {
+               "@id": "4",
+               "@name": "OpenRowsetVariable",
+               "@dataType": "System.String",
+               "@state": "default",
+               "@isArray": "false",
+               "@description": "Specifies the variable that contains the name of the database object used to open a rowset.",
+               "@typeConverter": "",
+               "@UITypeEditor": "",
+               "@containsID": "false",
+               "@expressionType": "None"
+            },
+            {
+               "@id": "5",
+               "@name": "SqlCommand",
+               "@dataType": "System.String",
+               "@state": "default",
+               "@isArray": "false",
+               "@description": "The SQL command to be executed.",
+               "@typeConverter": "",
+               "@UITypeEditor": "Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91",
+               "@containsID": "false",
+               "@expressionType": "None",
+               "#text": "select\n  g.GeographyKey\n, g.SalesTerritoryKey  \n, g.City\n, g.StateProvinceName [State]\n, g.PostalCode\nfrom dbo.DimGeography g\njoin dbo.DimSalesTerritory t \n  on t.SalesTerritoryKey = g.SalesTerritoryKey\nwhere t.SalesTerritoryCountry = 'United States' \norder by g.StateProvinceName, g.City"
+            },
+            {
+               "@id": "6",
+               "@name": "SqlCommandVariable",
+               "@dataType": "System.String",
+               "@state": "default",
+               "@isArray": "false",
+               "@description": "The variable that contains the SQL command to be executed.",
+               "@typeConverter": "",
+               "@UITypeEditor": "",
+               "@containsID": "false",
+               "@expressionType": "None"
+            },
+            {
+               "@id": "7",
+               "@name": "DefaultCodePage",
+               "@dataType": "System.Int32",
+               "@state": "default",
+               "@isArray": "false",
+               "@description": "Specifies the column code page to use when code page information is unavailable from the data source.",
+               "@typeConverter": "",
+               "@UITypeEditor": "",
+               "@containsID": "false",
+               "@expressionType": "None",
+               "#text": "1252"
+            },
+            {
+               "@id": "8",
+               "@name": "AlwaysUseDefaultCodePage",
+               "@dataType": "System.Boolean",
+               "@state": "default",
+               "@isArray": "false",
+               "@description": "Forces the use of the DefaultCodePage property value when describing character data.",
+               "@typeConverter": "",
+               "@UITypeEditor": "",
+               "@containsID": "false",
+               "@expressionType": "None",
+               "#text": "false"
+            },
+            {
+               "@id": "9",
+               "@name": "AccessMode",
+               "@dataType": "System.Int32",
+               "@state": "default",
+               "@isArray": "false",
+               "@description": "Specifies the mode used to access the database.",
+               "@typeConverter": "AccessMode",
+               "@UITypeEditor": "",
+               "@containsID": "false",
+               "@expressionType": "None",
+               "#text": "2"
+            },
+            {
+               "@id": "15",
+               "@name": "ParameterMapping",
+               "@dataType": "System.String",
+               "@state": "default",
+               "@isArray": "false",
+               "@description": "The mappings between the parameters in the SQL command and variables.",
+               "@typeConverter": "",
+               "@UITypeEditor": "",
+               "@containsID": "false",
+               "@expressionType": "None"
+            }
+         ]
+      },
+      "connections": {
+         "connection": {
+            "@id": "10",
+            "@name": "OleDbConnection",
+            "@description": "The OLE DB runtime connection used to access the database.",
+            "@connectionManagerID": "{F7E88C74-D039-4BB7-BBAF-672D8AF85932}"
+         }
+      },
+      "outputs": {
+         "output": [
+            {
+               "@id": "11",
+               "@name": "OLE DB Source Output",
+               "@description": "",
+               "@exclusionGroup": "0",
+               "@synchronousInputId": "0",
+               "@deleteOutputOnPathDetached": "false",
+               "@hasSideEffects": "false",
+               "@dangling": "false",
+               "@isErrorOut": "false",
+               "@isSorted": "false",
+               "@errorOrTruncationOperation": "",
+               "@errorRowDisposition": "NotUsed",
+               "@truncationRowDisposition": "NotUsed",
+               "outputColumns": {
+                  "outputColumn": [
+                     {
+                        "@id": "53",
+                        "@name": "GeographyKey",
+                        "@description": "",
+                        "@lineageId": "53",
+                        "@precision": "0",
+                        "@scale": "0",
+                        "@length": "0",
+                        "@dataType": "i4",
+                        "@codePage": "0",
+                        "@sortKeyPosition": "0",
+                        "@comparisonFlags": "0",
+                        "@specialFlags": "0",
+                        "@errorOrTruncationOperation": "Conversion",
+                        "@errorRowDisposition": "FailComponent",
+                        "@truncationRowDisposition": "FailComponent",
+                        "@externalMetadataColumnId": "52"
+                     },
+                     {
+                        "@id": "56",
+                        "@name": "SalesTerritoryKey",
+                        "@description": "",
+                        "@lineageId": "56",
+                        "@precision": "0",
+                        "@scale": "0",
+                        "@length": "0",
+                        "@dataType": "i4",
+                        "@codePage": "0",
+                        "@sortKeyPosition": "0",
+                        "@comparisonFlags": "0",
+                        "@specialFlags": "0",
+                        "@errorOrTruncationOperation": "Conversion",
+                        "@errorRowDisposition": "FailComponent",
+                        "@truncationRowDisposition": "FailComponent",
+                        "@externalMetadataColumnId": "55"
+                     },
+                     {
+                        "@id": "59",
+                        "@name": "City",
+                        "@description": "",
+                        "@lineageId": "59",
+                        "@precision": "0",
+                        "@scale": "0",
+                        "@length": "30",
+                        "@dataType": "wstr",
+                        "@codePage": "0",
+                        "@sortKeyPosition": "0",
+                        "@comparisonFlags": "0",
+                        "@specialFlags": "0",
+                        "@errorOrTruncationOperation": "Conversion",
+                        "@errorRowDisposition": "FailComponent",
+                        "@truncationRowDisposition": "FailComponent",
+                        "@externalMetadataColumnId": "58"
+                     },
+                     {
+                        "@id": "62",
+                        "@name": "State",
+                        "@description": "",
+                        "@lineageId": "62",
+                        "@precision": "0",
+                        "@scale": "0",
+                        "@length": "50",
+                        "@dataType": "wstr",
+                        "@codePage": "0",
+                        "@sortKeyPosition": "0",
+                        "@comparisonFlags": "0",
+                        "@specialFlags": "0",
+                        "@errorOrTruncationOperation": "Conversion",
+                        "@errorRowDisposition": "FailComponent",
+                        "@truncationRowDisposition": "FailComponent",
+                        "@externalMetadataColumnId": "61"
+                     },
+                     {
+                        "@id": "65",
+                        "@name": "PostalCode",
+                        "@description": "",
+                        "@lineageId": "65",
+                        "@precision": "0",
+                        "@scale": "0",
+                        "@length": "15",
+                        "@dataType": "wstr",
+                        "@codePage": "0",
+                        "@sortKeyPosition": "0",
+                        "@comparisonFlags": "0",
+                        "@specialFlags": "0",
+                        "@errorOrTruncationOperation": "Conversion",
+                        "@errorRowDisposition": "FailComponent",
+                        "@truncationRowDisposition": "FailComponent",
+                        "@externalMetadataColumnId": "64"
+                     }
+                  ]
+               },
+               "externalMetadataColumns": {
+                  "@isUsed": "True",
+                  "externalMetadataColumn": [
+                     {
+                        "@id": "52",
+                        "@name": "GeographyKey",
+                        "@description": "",
+                        "@precision": "0",
+                        "@scale": "0",
+                        "@length": "0",
+                        "@dataType": "i4",
+                        "@codePage": "0"
+                     },
+                     {
+                        "@id": "55",
+                        "@name": "SalesTerritoryKey",
+                        "@description": "",
+                        "@precision": "0",
+                        "@scale": "0",
+                        "@length": "0",
+                        "@dataType": "i4",
+                        "@codePage": "0"
+                     },
+                     {
+                        "@id": "58",
+                        "@name": "City",
+                        "@description": "",
+                        "@precision": "0",
+                        "@scale": "0",
+                        "@length": "30",
+                        "@dataType": "wstr",
+                        "@codePage": "0"
+                     },
+                     {
+                        "@id": "61",
+                        "@name": "State",
+                        "@description": "",
+                        "@precision": "0",
+                        "@scale": "0",
+                        "@length": "50",
+                        "@dataType": "wstr",
+                        "@codePage": "0"
+                     },
+                     {
+                        "@id": "64",
+                        "@name": "PostalCode",
+                        "@description": "",
+                        "@precision": "0",
+                        "@scale": "0",
+                        "@length": "15",
+                        "@dataType": "wstr",
+                        "@codePage": "0"
+                     }
+                  ]
+               }
+            },
+            {
+               "@id": "12",
+               "@name": "OLE DB Source Error Output",
+               "@description": "",
+               "@exclusionGroup": "0",
+               "@synchronousInputId": "0",
+               "@deleteOutputOnPathDetached": "false",
+               "@hasSideEffects": "false",
+               "@dangling": "false",
+               "@isErrorOut": "true",
+               "@isSorted": "false",
+               "@errorOrTruncationOperation": "",
+               "@errorRowDisposition": "NotUsed",
+               "@truncationRowDisposition": "NotUsed",
+               "outputColumns": {
+                  "outputColumn": [
+                     {
+                        "@id": "54",
+                        "@name": "GeographyKey",
+                        "@description": "",
+                        "@lineageId": "54",
+                        "@precision": "0",
+                        "@scale": "0",
+                        "@length": "0",
+                        "@dataType": "i4",
+                        "@codePage": "0",
+                        "@sortKeyPosition": "0",
+                        "@comparisonFlags": "0",
+                        "@specialFlags": "0",
+                        "@errorOrTruncationOperation": "",
+                        "@errorRowDisposition": "NotUsed",
+                        "@truncationRowDisposition": "NotUsed",
+                        "@externalMetadataColumnId": "0"
+                     },
+                     {
+                        "@id": "57",
+                        "@name": "SalesTerritoryKey",
+                        "@description": "",
+                        "@lineageId": "57",
+                        "@precision": "0",
+                        "@scale": "0",
+                        "@length": "0",
+                        "@dataType": "i4",
+                        "@codePage": "0",
+                        "@sortKeyPosition": "0",
+                        "@comparisonFlags": "0",
+                        "@specialFlags": "0",
+                        "@errorOrTruncationOperation": "",
+                        "@errorRowDisposition": "NotUsed",
+                        "@truncationRowDisposition": "NotUsed",
+                        "@externalMetadataColumnId": "0"
+                     },
+                     {
+                        "@id": "60",
+                        "@name": "City",
+                        "@description": "",
+                        "@lineageId": "60",
+                        "@precision": "0",
+                        "@scale": "0",
+                        "@length": "30",
+                        "@dataType": "wstr",
+                        "@codePage": "0",
+                        "@sortKeyPosition": "0",
+                        "@comparisonFlags": "0",
+                        "@specialFlags": "0",
+                        "@errorOrTruncationOperation": "",
+                        "@errorRowDisposition": "NotUsed",
+                        "@truncationRowDisposition": "NotUsed",
+                        "@externalMetadataColumnId": "0"
+                     },
+                     {
+                        "@id": "63",
+                        "@name": "State",
+                        "@description": "",
+                        "@lineageId": "63",
+                        "@precision": "0",
+                        "@scale": "0",
+                        "@length": "50",
+                        "@dataType": "wstr",
+                        "@codePage": "0",
+                        "@sortKeyPosition": "0",
+                        "@comparisonFlags": "0",
+                        "@specialFlags": "0",
+                        "@errorOrTruncationOperation": "",
+                        "@errorRowDisposition": "NotUsed",
+                        "@truncationRowDisposition": "NotUsed",
+                        "@externalMetadataColumnId": "0"
+                     },
+                     {
+                        "@id": "66",
+                        "@name": "PostalCode",
+                        "@description": "",
+                        "@lineageId": "66",
+                        "@precision": "0",
+                        "@scale": "0",
+                        "@length": "15",
+                        "@dataType": "wstr",
+                        "@codePage": "0",
+                        "@sortKeyPosition": "0",
+                        "@comparisonFlags": "0",
+                        "@specialFlags": "0",
+                        "@errorOrTruncationOperation": "",
+                        "@errorRowDisposition": "NotUsed",
+                        "@truncationRowDisposition": "NotUsed",
+                        "@externalMetadataColumnId": "0"
+                     },
+                     {
+                        "@id": "13",
+                        "@name": "ErrorCode",
+                        "@description": "",
+                        "@lineageId": "13",
+                        "@precision": "0",
+                        "@scale": "0",
+                        "@length": "0",
+                        "@dataType": "i4",
+                        "@codePage": "0",
+                        "@sortKeyPosition": "0",
+                        "@comparisonFlags": "0",
+                        "@specialFlags": "1",
+                        "@errorOrTruncationOperation": "",
+                        "@errorRowDisposition": "NotUsed",
+                        "@truncationRowDisposition": "NotUsed",
+                        "@externalMetadataColumnId": "0"
+                     },
+                     {
+                        "@id": "14",
+                        "@name": "ErrorColumn",
+                        "@description": "",
+                        "@lineageId": "14",
+                        "@precision": "0",
+                        "@scale": "0",
+                        "@length": "0",
+                        "@dataType": "i4",
+                        "@codePage": "0",
+                        "@sortKeyPosition": "0",
+                        "@comparisonFlags": "0",
+                        "@specialFlags": "2",
+                        "@errorOrTruncationOperation": "",
+                        "@errorRowDisposition": "NotUsed",
+                        "@truncationRowDisposition": "NotUsed",
+                        "@externalMetadataColumnId": "0"
+                     }
+                  ]
+               },
+               "externalMetadataColumns": {
+                  "@isUsed": "False"
+               }
+            }
+         ]
+      }
+   },
+   {
+      "@id": "16",
+      "@name": "Derived Column",
+      "@componentClassID": "{9CF90BF0-5BCC-4C63-B91D-1F322DC12C26}",
+      "@description": "Updates column values using expressions",
+      "@localeId": "-1",
+      "@usesDispositions": "true",
+      "@validateExternalMetadata": "True",
+      "@version": "0",
+      "@pipelineVersion": "0",
+      "@contactInfo": "Derived Column;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0",
+      "inputs": {
+         "input": {
+            "@id": "17",
+            "@name": "Derived Column Input",
+            "@description": "Input to the Derived Column Transformation",
+            "@hasSideEffects": "false",
+            "@dangling": "false",
+            "@errorOrTruncationOperation": "",
+            "@errorRowDisposition": "NotUsed",
+            "@truncationRowDisposition": "NotUsed",
+            "externalMetadataColumns": {
+               "@isUsed": "False"
+            }
+         }
+      },
+      "outputs": {
+         "output": [
+            {
+               "@id": "18",
+               "@name": "Derived Column Output",
+               "@description": "Default Output of the Derived Column Transformation",
+               "@exclusionGroup": "1",
+               "@synchronousInputId": "17",
+               "@deleteOutputOnPathDetached": "false",
+               "@hasSideEffects": "false",
+               "@dangling": "false",
+               "@isErrorOut": "false",
+               "@isSorted": "false",
+               "@errorOrTruncationOperation": "",
+               "@errorRowDisposition": "NotUsed",
+               "@truncationRowDisposition": "NotUsed",
+               "outputColumns": {
+                  "outputColumn": {
+                     "@id": "139",
+                     "@name": "Forecast",
+                     "@description": "",
+                     "@lineageId": "139",
+                     "@precision": "0",
+                     "@scale": "0",
+                     "@length": "0",
+                     "@dataType": "cy",
+                     "@codePage": "0",
+                     "@sortKeyPosition": "0",
+                     "@comparisonFlags": "0",
+                     "@specialFlags": "0",
+                     "@errorOrTruncationOperation": "Computation",
+                     "@errorRowDisposition": "FailComponent",
+                     "@truncationRowDisposition": "FailComponent",
+                     "@externalMetadataColumnId": "0",
+                     "properties": {
+                        "property": [
+                           {
+                              "@id": "140",
+                              "@name": "Expression",
+                              "@dataType": "System.String",
+                              "@state": "default",
+                              "@isArray": "false",
+                              "@description": "Derived Column Expression",
+                              "@typeConverter": "",
+                              "@UITypeEditor": "",
+                              "@containsID": "true",
+                              "@expressionType": "None",
+                              "#text": "0"
+                           },
+                           {
+                              "@id": "141",
+                              "@name": "FriendlyExpression",
+                              "@dataType": "System.String",
+                              "@state": "default",
+                              "@isArray": "false",
+                              "@description": "Derived Column Friendly Expression",
+                              "@typeConverter": "",
+                              "@UITypeEditor": "",
+                              "@containsID": "true",
+                              "@expressionType": "Notify",
+                              "#text": "0"
+                           }
+                        ]
+                     }
+                  }
+               },
+               "externalMetadataColumns": {
+                  "@isUsed": "False"
+               }
+            },
+            {
+               "@id": "19",
+               "@name": "Derived Column Error Output",
+               "@description": "Error Output of the Derived Column Transformation",
+               "@exclusionGroup": "1",
+               "@synchronousInputId": "17",
+               "@deleteOutputOnPathDetached": "false",
+               "@hasSideEffects": "false",
+               "@dangling": "false",
+               "@isErrorOut": "true",
+               "@isSorted": "false",
+               "@errorOrTruncationOperation": "",
+               "@errorRowDisposition": "NotUsed",
+               "@truncationRowDisposition": "NotUsed",
+               "outputColumns": {
+                  "outputColumn": [
+                     {
+                        "@id": "20",
+                        "@name": "ErrorCode",
+                        "@description": "",
+                        "@lineageId": "20",
+                        "@precision": "0",
+                        "@scale": "0",
+                        "@length": "0",
+                        "@dataType": "i4",
+                        "@codePage": "0",
+                        "@sortKeyPosition": "0",
+                        "@comparisonFlags": "0",
+                        "@specialFlags": "1",
+                        "@errorOrTruncationOperation": "",
+                        "@errorRowDisposition": "NotUsed",
+                        "@truncationRowDisposition": "NotUsed",
+                        "@externalMetadataColumnId": "0"
+                     },
+                     {
+                        "@id": "21",
+                        "@name": "ErrorColumn",
+                        "@description": "",
+                        "@lineageId": "21",
+                        "@precision": "0",
+                        "@scale": "0",
+                        "@length": "0",
+                        "@dataType": "i4",
+                        "@codePage": "0",
+                        "@sortKeyPosition": "0",
+                        "@comparisonFlags": "0",
+                        "@specialFlags": "2",
+                        "@errorOrTruncationOperation": "",
+                        "@errorRowDisposition": "NotUsed",
+                        "@truncationRowDisposition": "NotUsed",
+                        "@externalMetadataColumnId": "0"
+                     }
+                  ]
+               },
+               "externalMetadataColumns": {
+                  "@isUsed": "False"
+               }
+            }
+         ]
+      }
+   },
+   {
+      "@id": "22",
+      "@name": "Excel Destination",
+      "@componentClassID": "{4963CAED-CB38-4146-96F0-5910342FF3B9}",
+      "@description": "Excel Destination",
+      "@localeId": "-1",
+      "@usesDispositions": "true",
+      "@validateExternalMetadata": "True",
+      "@version": "0",
+      "@pipelineVersion": "0",
+      "@contactInfo": "Excel Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0",
+      "properties": {
+         "property": [
+            {
+               "@id": "23",
+               "@name": "CommandTimeout",
+               "@dataType": "System.Int32",
+               "@state": "default",
+               "@isArray": "false",
+               "@description": "The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.",
+               "@typeConverter": "",
+               "@UITypeEditor": "",
+               "@containsID": "false",
+               "@expressionType": "None",
+               "#text": "0"
+            },
+            {
+               "@id": "24",
+               "@name": "OpenRowset",
+               "@dataType": "System.String",
+               "@state": "default",
+               "@isArray": "false",
+               "@description": "Specifies the name of the database object used to open a rowset.",
+               "@typeConverter": "",
+               "@UITypeEditor": "",
+               "@containsID": "false",
+               "@expressionType": "None",
+               "#text": "Excel Destination"
+            },
+            {
+               "@id": "25",
+               "@name": "OpenRowsetVariable",
+               "@dataType": "System.String",
+               "@state": "default",
+               "@isArray": "false",
+               "@description": "Specifies the variable that contains the name of the database object used to open a rowset.",
+               "@typeConverter": "",
+               "@UITypeEditor": "",
+               "@containsID": "false",
+               "@expressionType": "None"
+            },
+            {
+               "@id": "26",
+               "@name": "SqlCommand",
+               "@dataType": "System.String",
+               "@state": "default",
+               "@isArray": "false",
+               "@description": "The SQL command to be executed.",
+               "@typeConverter": "",
+               "@UITypeEditor": "Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91",
+               "@containsID": "false",
+               "@expressionType": "None"
+            },
+            {
+               "@id": "27",
+               "@name": "AccessMode",
+               "@dataType": "System.Int32",
+               "@state": "default",
+               "@isArray": "false",
+               "@description": "Specifies the mode used to access the database.",
+               "@typeConverter": "AccessMode",
+               "@UITypeEditor": "",
+               "@containsID": "false",
+               "@expressionType": "None",
+               "#text": "0"
+            },
+            {
+               "@id": "29",
+               "@name": "FastLoadKeepIdentity",
+               "@dataType": "System.Boolean",
+               "@state": "default",
+               "@isArray": "false",
+               "@description": "Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on.",
+               "@typeConverter": "",
+               "@UITypeEditor": "",
+               "@containsID": "false",
+               "@expressionType": "None",
+               "#text": "false"
+            },
+            {
+               "@id": "30",
+               "@name": "FastLoadKeepNulls",
+               "@dataType": "System.Boolean",
+               "@state": "default",
+               "@isArray": "false",
+               "@description": "Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on.",
+               "@typeConverter": "",
+               "@UITypeEditor": "",
+               "@containsID": "false",
+               "@expressionType": "None",
+               "#text": "false"
+            },
+            {
+               "@id": "31",
+               "@name": "FastLoadOptions",
+               "@dataType": "System.String",
+               "@state": "default",
+               "@isArray": "false",
+               "@description": "Specifies options to be used with fast load.  Applies only if fast load is turned on.",
+               "@typeConverter": "",
+               "@UITypeEditor": "",
+               "@containsID": "false",
+               "@expressionType": "None"
+            },
+            {
+               "@id": "32",
+               "@name": "FastLoadMaxInsertCommitSize",
+               "@dataType": "System.Int32",
+               "@state": "default",
+               "@isArray": "false",
+               "@description": "Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on.",
+               "@typeConverter": "",
+               "@UITypeEditor": "",
+               "@containsID": "false",
+               "@expressionType": "None",
+               "#text": "0"
+            }
+         ]
+      },
+      "connections": {
+         "connection": {
+            "@id": "28",
+            "@name": "OleDbConnection",
+            "@description": "The OLE DB runtime connection used to access the database.",
+            "@connectionManagerID": "{02EFA3C0-9DBE-4279-9E03-B752C6523DAE}"
+         }
+      },
+      "inputs": {
+         "input": {
+            "@id": "33",
+            "@name": "Excel Destination Input",
+            "@description": "",
+            "@hasSideEffects": "true",
+            "@dangling": "false",
+            "@errorOrTruncationOperation": "Insert",
+            "@errorRowDisposition": "FailComponent",
+            "@truncationRowDisposition": "NotUsed",
+            "inputColumns": {
+               "inputColumn": [
+                  {
+                     "@id": "164",
+                     "@name": "",
+                     "@description": "",
+                     "@lineageId": "53",
+                     "@usageType": "readOnly",
+                     "@errorOrTruncationOperation": "",
+                     "@errorRowDisposition": "NotUsed",
+                     "@truncationRowDisposition": "NotUsed",
+                     "@externalMetadataColumnId": "158"
+                  },
+                  {
+                     "@id": "165",
+                     "@name": "",
+                     "@description": "",
+                     "@lineageId": "56",
+                     "@usageType": "readOnly",
+                     "@errorOrTruncationOperation": "",
+                     "@errorRowDisposition": "NotUsed",
+                     "@truncationRowDisposition": "NotUsed",
+                     "@externalMetadataColumnId": "159"
+                  },
+                  {
+                     "@id": "166",
+                     "@name": "",
+                     "@description": "",
+                     "@lineageId": "59",
+                     "@usageType": "readOnly",
+                     "@errorOrTruncationOperation": "",
+                     "@errorRowDisposition": "NotUsed",
+                     "@truncationRowDisposition": "NotUsed",
+                     "@externalMetadataColumnId": "160"
+                  },
+                  {
+                     "@id": "167",
+                     "@name": "",
+                     "@description": "",
+                     "@lineageId": "62",
+                     "@usageType": "readOnly",
+                     "@errorOrTruncationOperation": "",
+                     "@errorRowDisposition": "NotUsed",
+                     "@truncationRowDisposition": "NotUsed",
+                     "@externalMetadataColumnId": "161"
+                  },
+                  {
+                     "@id": "168",
+                     "@name": "",
+                     "@description": "",
+                     "@lineageId": "65",
+                     "@usageType": "readOnly",
+                     "@errorOrTruncationOperation": "",
+                     "@errorRowDisposition": "NotUsed",
+                     "@truncationRowDisposition": "NotUsed",
+                     "@externalMetadataColumnId": "162"
+                  },
+                  {
+                     "@id": "169",
+                     "@name": "",
+                     "@description": "",
+                     "@lineageId": "139",
+                     "@usageType": "readOnly",
+                     "@errorOrTruncationOperation": "",
+                     "@errorRowDisposition": "NotUsed",
+                     "@truncationRowDisposition": "NotUsed",
+                     "@externalMetadataColumnId": "163"
+                  }
+               ]
+            },
+            "externalMetadataColumns": {
+               "@isUsed": "True",
+               "externalMetadataColumn": [
+                  {
+                     "@id": "158",
+                     "@name": "GeographyKey",
+                     "@description": "",
+                     "@precision": "0",
+                     "@scale": "0",
+                     "@length": "0",
+                     "@dataType": "r8",
+                     "@codePage": "0"
+                  },
+                  {
+                     "@id": "159",
+                     "@name": "SalesTerritoryKey",
+                     "@description": "",
+                     "@precision": "0",
+                     "@scale": "0",
+                     "@length": "0",
+                     "@dataType": "r8",
+                     "@codePage": "0"
+                  },
+                  {
+                     "@id": "160",
+                     "@name": "City",
+                     "@description": "",
+                     "@precision": "0",
+                     "@scale": "0",
+                     "@length": "255",
+                     "@dataType": "wstr",
+                     "@codePage": "0"
+                  },
+                  {
+                     "@id": "161",
+                     "@name": "State",
+                     "@description": "",
+                     "@precision": "0",
+                     "@scale": "0",
+                     "@length": "255",
+                     "@dataType": "wstr",
+                     "@codePage": "0"
+                  },
+                  {
+                     "@id": "162",
+                     "@name": "PostalCode",
+                     "@description": "",
+                     "@precision": "0",
+                     "@scale": "0",
+                     "@length": "255",
+                     "@dataType": "wstr",
+                     "@codePage": "0"
+                  },
+                  {
+                     "@id": "163",
+                     "@name": "Forecast",
+                     "@description": "",
+                     "@precision": "0",
+                     "@scale": "0",
+                     "@length": "0",
+                     "@dataType": "cy",
+                     "@codePage": "0"
+                  }
+               ]
+            }
+         }
+      },
+      "outputs": {
+         "output": {
+            "@id": "34",
+            "@name": "Excel Destination Error Output",
+            "@description": "",
+            "@exclusionGroup": "1",
+            "@synchronousInputId": "33",
+            "@deleteOutputOnPathDetached": "false",
+            "@hasSideEffects": "false",
+            "@dangling": "false",
+            "@isErrorOut": "true",
+            "@isSorted": "false",
+            "@errorOrTruncationOperation": "",
+            "@errorRowDisposition": "NotUsed",
+            "@truncationRowDisposition": "NotUsed",
+            "outputColumns": {
+               "outputColumn": [
+                  {
+                     "@id": "35",
+                     "@name": "ErrorCode",
+                     "@description": "",
+                     "@lineageId": "35",
+                     "@precision": "0",
+                     "@scale": "0",
+                     "@length": "0",
+                     "@dataType": "i4",
+                     "@codePage": "0",
+                     "@sortKeyPosition": "0",
+                     "@comparisonFlags": "0",
+                     "@specialFlags": "1",
+                     "@errorOrTruncationOperation": "",
+                     "@errorRowDisposition": "NotUsed",
+                     "@truncationRowDisposition": "NotUsed",
+                     "@externalMetadataColumnId": "0"
+                  },
+                  {
+                     "@id": "36",
+                     "@name": "ErrorColumn",
+                     "@description": "",
+                     "@lineageId": "36",
+                     "@precision": "0",
+                     "@scale": "0",
+                     "@length": "0",
+                     "@dataType": "i4",
+                     "@codePage": "0",
+                     "@sortKeyPosition": "0",
+                     "@comparisonFlags": "0",
+                     "@specialFlags": "2",
+                     "@errorOrTruncationOperation": "",
+                     "@errorRowDisposition": "NotUsed",
+                     "@truncationRowDisposition": "NotUsed",
+                     "@externalMetadataColumnId": "0"
+                  }
+               ]
+            },
+            "externalMetadataColumns": {
+               "@isUsed": "False"
+            }
+         }
+      }
+   }
+]
