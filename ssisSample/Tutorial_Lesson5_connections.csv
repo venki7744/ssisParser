@@ -1,2 +1,2 @@
-packageName,DTSID
-Lesson5,{229DCC86-9F3D-45A0-B3AE-47B64D85A805}
+packageName,DTSID,connection_ref_id,ObjectName
+Lesson5,{229DCC86-9F3D-45A0-B3AE-47B64D85A805},"['Package.ConnectionManagers[Error Data]', 'Package.ConnectionManagers[Lesson3.log]', 'Package.ConnectionManagers[localhost.AdventureWorksDW2012.sa]', 'Package.ConnectionManagers[Sample Flat File Source Data]']","['Error Data', 'Lesson3.log', 'localhost.AdventureWorksDW2012.sa', 'Sample Flat File Source Data']"
