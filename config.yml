@@ -6,18 +6,17 @@ analysisModels:
     parent: ''
     columns:
       - name: packageName 
-        path: 'DTS:Executable.@DTS:ObjectName'
+        path: '"DTS:Executable"."@DTS:DTSID"'
       - name: DTSID
-        path: 'DTS:Executable.@DTS:DTSID'
+        path: '"DTS:Executable"."@DTS:ObjectName"'
   - name: connections
     parent: ''
     columns:
       - name: packageName 
-        path: 'DTS:Executable.@DTS:ObjectName'
+        path: '"DTS:Executable"."@DTS:ObjectName"'
       - name: DTSID
-        path: 'DTS:Executable.@DTS:DTSID'
-      - name: connection_ref_id 
-        path: 'DTS:Executable.DTS:ConnectionManagers.DTS:ConnectionManager.@@List.@DTS:refId'
-      - name: ObjectName
-        path: 'DTS:Executable.DTS:ConnectionManagers.DTS:ConnectionManager.@@List.@DTS:ObjectName'
+        path: '"DTS:Executable"."@DTS:DTSID"'
+      - name: Connections 
+        path: 'unnest("DTS:Executable"."DTS:ConnectionManagers"."DTS:ConnectionManager")'
+     
      
